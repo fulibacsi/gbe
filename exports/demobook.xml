@@ -1,0 +1,12 @@
+<book title="You are the hero!">
+  <h1>You are the hero!</h1>
+  <chapter end="not" id="1">Your journey begins! 
+                You are standing at the entrance of a cave 
+                with a deep hole next to it. 
+                What do you do?<action target="#5">Return home</action><action target="#4">Jump into the hole</action><action target="#2">Enter cave</action></chapter>
+  <chapter end="not" id="2">It's pitch black inside!<action target="#3">Charge forward!</action><action target="#1">Exit cave</action></chapter>
+  <chapter end="not" id="3">You ran into a deep hole and fell down.<action target="#4">You know what's next, right?</action></chapter>
+  <chapter end="fail" id="4">You have died!</chapter>
+  <chapter end="win" id="5">Congratulations! 
+                You have successfully survived the adventure!</chapter>
+</book>

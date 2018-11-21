@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>You are the hero!</title>
+  </head>
+  <body>
+    <div title="You are the hero!">
+      <h1>You are the hero!</h1>
+      <hr/>
+      <div end="not" id="1" class="chapter">
+        <p>Your journey begins! 
+                You are standing at the entrance of a cave 
+                with a deep hole next to it. 
+                What do you do?</p>
+        <ul>
+          <li>
+            <a href="#5" class="action">Return home</a>
+          </li>
+          <li>
+            <a href="#4" class="action">Jump into the hole</a>
+          </li>
+          <li>
+            <a href="#2" class="action">Enter cave</a>
+          </li>
+        </ul>
+      </div>
+      <div end="not" id="2" class="chapter">
+        <p>It's pitch black inside!</p>
+        <ul>
+          <li>
+            <a href="#3" class="action">Charge forward!</a>
+          </li>
+          <li>
+            <a href="#1" class="action">Exit cave</a>
+          </li>
+        </ul>
+      </div>
+      <div end="not" id="3" class="chapter">
+        <p>You ran into a deep hole and fell down.</p>
+        <ul>
+          <li>
+            <a href="#4" class="action">You know what's next, right?</a>
+          </li>
+        </ul>
+      </div>
+      <div end="fail" id="4" class="chapter">
+        <p>You have died!</p>
+        <ul/>
+      </div>
+      <div end="win" id="5" class="chapter">
+        <p>Congratulations! 
+                You have successfully survived the adventure!</p>
+        <ul/>
+      </div>
+    </div>
+    <script type="text/javascript">function reveal(index) {
+    var chapters = Array.from(document.getElementsByClassName('chapter'));
+    chapters.forEach(function(element) {
+        element.style.visibility = 'hidden';
+    });
+    document.getElementById(index).style.visibility = 'visible';   
+}
+var actions = Array.from(document.getElementsByClassName('action'));
+actions.forEach(function(element) {
+    var target = parseInt(element.getAttribute('href').replace('#', ''));
+    element.onclick = function() {reveal(target);};
+});reveal(1);</script>
+  </body>
+</html>
